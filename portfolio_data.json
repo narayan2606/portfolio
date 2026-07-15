@@ -1,0 +1,148 @@
+[
+  {
+    "project_name": "Personal Background & Achievements",
+    "tech_stack": ["Background", "Achievements", "Logistics"],
+    "section_name": "Personal_Introduction_and_Logistics",
+    "chunk_content": "Personal Background: Originally from Samastipur, Bihar, and currently based in Sector 143, Noida, Uttar Pradesh. A major academic milestone includes qualifying GATE-2024 in Computer Science (CSE), validating a strong command over core CS fundamentals despite a B.Tech in Mechanical Engineering. The core project portfolio consists of: 1) CTWGAN-GP Research (Fraud Detection), 2) Automated Job Outreach System, and 3) VIP Guest Recognition System. Outside of system architecture and AI development, personal interests include playing Badminton and studying Philosophy."
+  },
+  {
+    "project_name": "CTWGAN-GP Research (Fraud Detection)",
+    "tech_stack": ["PyTorch", "Pandas", "Scikit-Learn"],
+    "section_name": "CTWGAN-GP_Core_Architecture",
+    "chunk_content": "Project Overview(From August 2025 to November 2025): Developed CTWGAN-GP using PyTorch to balance an extreme 0.17% minority class (492 frauds in 284,807 transactions) in the ULB dataset. The architecture merges Tabular Conditional GANs with Wasserstein-1 distance and Gradient Penalty. The Conditional Generator maps 100-dim latent noise + one-hot class vectors to explicitly synthesize the 'Fraud' class, while a bipartite loss function prevents misclassification."
+  },
+  {
+    "project_name": "CTWGAN-GP Research (Fraud Detection)",
+    "tech_stack": ["PyTorch", "Pandas", "Scikit-Learn"],
+    "section_name": "Mathematical_Constraints_and_Stability",
+    "chunk_content": "Problem & Solution: Proved the failure of geometric interpolators (SMOTE) on non-linear financial manifolds and identified Jensen-Shannon divergence saturation in standard GANs. Replaced binary discriminators with a continuous Critic network. Implemented Earth-Mover (Wasserstein-1) distance for non-zero directional gradients on disjoint supports. Eliminated mode collapse by replacing weight clipping with an L2-norm Gradient Penalty (lambda=10) for strict 1-Lipschitz continuity."
+  },
+  {
+    "project_name": "CTWGAN-GP Research (Fraud Detection)",
+    "tech_stack": ["PyTorch", "Pandas", "Scikit-Learn"],
+    "section_name": "Data_Pipeline_and_Anti_Leakage",
+    "chunk_content": "Data Engineering: Engineered a deterministic 'Anti-Leakage Protocol' utilizing Stratified Splits before generative oversampling. Isolated a pure, zero-leakage test set (exactly 450 legitimate and 50 fraudulent transactions). Handled continuous multimodal skewed variables (e.g., Transaction Amount) using Variational Gaussian Mixture (VGM) normalization via Pandas and Scikit-learn, decomposing them into stable one-hot and scalar components."
+  },
+  {
+    "project_name": "CTWGAN-GP Research (Fraud Detection)",
+    "tech_stack": ["PyTorch", "Pandas", "Scikit-Learn"],
+    "section_name": "Inference_Latency_Optimization",
+    "chunk_content": "System Optimization: Addressed latency bottlenecks inherent in SOTA Diffusion models (like TabDDPM) which fail real-time banking requirements due to O(N*T) sequential Markovian steps. Reduced inference computational complexity to strictly O(1) via a single forward-pass generation pipeline, making the architecture viable for millisecond-latency commercial banking environments."
+  },
+  {
+    "project_name": "CTWGAN-GP Research (Fraud Detection)",
+    "tech_stack": ["PyTorch", "Pandas", "Scikit-Learn"],
+    "section_name": "Evaluation_and_Impact_Metrics",
+    "chunk_content": "Evaluation Protocol: Discarded misleading Accuracy metrics for imbalanced datasets. Validated synthetic topology without internal linear dimensionality reduction (PCA). Tuned Cross-Entropy weight (gamma=50) for label fidelity. Elevated downstream classifier metrics on the strictly unseen zero-leakage test set, achieving a minority class Recall of 99.20% and an F1-Score of 99.18."
+  },
+  {
+    "project_name": "CTWGAN-GP Research (Fraud Detection)",
+    "tech_stack": ["PyTorch", "Pandas", "Scikit-Learn"],
+    "section_name": "Research_and_Publications",
+    "chunk_content": "Academic Output: Authored a comprehensive research manuscript based on the CTWGAN-GP architecture for balancing extreme financial datasets. The paper details the mathematical formulations of the Wasserstein-1 continuous Critic and the Deterministic Anti-Leakage Protocol. The manuscript is currently under strict peer review in a reputed Taylor & Francis journal. Demonstrates the ability to translate hardcore ML engineering into peer-reviewed academic literature."
+  },
+  {
+    "project_name": "Automated Job Outreach System",
+    "tech_stack": ["Playwright", "Supabase", "Groq API", "Streamlit"],
+    "section_name": "System_Architecture_and_Decoupling",
+    "chunk_content": "Project Overview (From February 2026 to April 2026): Engineered an end-to-end automated Job Aggregation and Outreach system by strictly decoupling heavy backend ETL workers from a Streamlit UI dashboard. Developed a headless Playwright scraper in Python to extract dynamic DOM elements from LinkedIn, integrated with a Supabase PostgreSQL backend to handle complex relational state management."
+  },
+  {
+    "project_name": "Automated Job Outreach System",
+    "tech_stack": ["Playwright", "Supabase", "Groq API", "Streamlit"],
+    "section_name": "Database_Design_and_State_Management",
+    "chunk_content": "Problem & Solution: Solved scalable state tracking and redundant API calls by implementing Partial Unique Indexes to prevent duplicate active jobs. Engineered a Soft-Delete Garbage Collection protocol to automatically archive job listings older than 3 days without violating strict foreign key constraints in junction tables (user_applied_jobs, user_contacted_hr)."
+  },
+  {
+    "project_name": "Automated Job Outreach System",
+    "tech_stack": ["Playwright", "Supabase", "Groq API", "Streamlit"],
+    "section_name": "LLM_Integration_and_Data_Enrichment",
+    "chunk_content": "Data Engineering: Integrated the Groq API (LLaMA-3.1-8b-instant) to dynamically parse unstructured HTML/DOM job descriptions into strictly typed JSON schemas. Automated the extraction of niche technical keywords and engineered a filtering layer to explicitly purge out-of-scope senior roles (e.g., >3 years experience) before database insertion, ensuring 100% target fidelity."
+  },
+  {
+    "project_name": "Automated Job Outreach System",
+    "tech_stack": ["Playwright", "Supabase", "Groq API", "Streamlit"],
+    "section_name": "Generative_Outreach_Automation",
+    "chunk_content": "System Optimization: Developed a dynamic prompt engineering pipeline to synthesize hyper-personalized, context-aware LinkedIn DMs. Designed the AI logic to map specific candidate skills against extracted job constraints in real-time, generating highly targeted outreach messages strictly constrained to under 200 characters for optimal HR response rates."
+  },
+  {
+    "project_name": "Automated Job Outreach System",
+    "tech_stack": ["Playwright", "Supabase", "Groq API", "Streamlit"],
+    "section_name": "Anti_Bot_Evasion_and_Infrastructure",
+    "chunk_content": "Evaluation Protocol: Addressed severe limitations of cloud hosting (AWS/DigitalOcean Datacenter IP blocks and Streamlit 1GB RAM OOM limits). Designed a fail-safe sequential bash script automated via OS-level Cron jobs (running 2x daily). This ensured 100% bypass of LinkedIn's aggressive anti-bot (PerimeterX) systems by utilizing residential IP routing, reducing operational costs to zero."
+  },
+  {
+    "project_name": "Automated Job Outreach System",
+    "tech_stack": ["Playwright", "Supabase", "Groq API", "Streamlit"],
+    "section_name": "Targeted_Stakeholder_Discovery_Pipeline",
+    "chunk_content": "Lead Generation Architecture: Engineered an automated stakeholder discovery module utilizing the Serper API to execute programmatic Google Dorking queries. Bypassed strict LinkedIn anti-scraping mechanisms by extracting Human Resource and Technical Leadership profiles directly from SERP data. Dynamically mapped extracted profiles to active job listings using multi-variable heuristics (Company + Location), storing the relational graphs in Supabase to drive the automated outreach pipeline."
+  },
+  {
+    "project_name": "VIP Guest Recognition System",
+    "tech_stack": ["FastAPI", "OpenCV", "FAISS", "Firebase"],
+    "section_name": "Business_Context_and_Security_Constraints",
+    "chunk_content": "Project Context (From January 2026 to March 2026): Delivered an end-to-end freelance solution for a high-profile political stakeholder (Member of Parliament). Since data privacy was the absolute bottleneck, cloud deployment was strictly prohibited. This strict security constraint forced the engineering of a 100% local, offline, high-speed FAISS vector search pipeline that guaranteed zero data leakage without compromising on millisecond-level latency."
+  },
+  {
+    "project_name": "VIP Guest Recognition System",
+    "tech_stack": ["FastAPI", "OpenCV", "FAISS", "Firebase"],
+    "section_name": "System_Architecture_and_Deployment",
+    "chunk_content": "Architecture Overview: Engineered a high-speed, local-server deployed Face Recognition pipeline to track and identify daily visitors. Strictly decoupled the frontend React/HTML interface from the heavy AI backend using an asynchronous FastAPI middleware to ensure non-blocking concurrent requests."
+  },
+  {
+    "project_name": "VIP Guest Recognition System",
+    "tech_stack": ["FastAPI", "OpenCV", "FAISS", "Firebase"],
+    "section_name": "Spatial_Alignment_and_Preprocessing_Pipeline",
+    "chunk_content": "Data Preprocessing: Engineered a rigorous spatial standardization pipeline using RetinaFace to extract 5 core facial landmarks. Solved input variance by applying cv2.estimateAffinePartial2D for strict alignment and cropping to exactly 112x112 pixels. This standardization was mandatory to feed the neural network, completely eliminating background noise and head-tilt inaccuracies prior to feature extraction."
+  },
+  {
+    "project_name": "VIP Guest Recognition System",
+    "tech_stack": ["FastAPI", "OpenCV", "FAISS", "Firebase"],
+    "section_name": "Neural_Network_Extraction_and_Library_Bypass",
+    "chunk_content": "Core AI Engine: Extracted 512-dimensional float32 vectors using the ArcFace (buffalo_l) ONNX runtime. Bypassed the InsightFace library's internal alignment constraints, which failed on pre-cropped images, by engineering a manual inference pipeline using cv2.dnn.blobFromImage. Reduced memory footprint and latency by decoding raw image bytes directly in RAM instead of relying on heavy disk I/O operations."
+  },
+  {
+    "project_name": "VIP Guest Recognition System",
+    "tech_stack": ["FastAPI", "OpenCV", "FAISS", "Firebase"],
+    "section_name": "High_Dimensional_Vector_Search_FAISS",
+    "chunk_content": "Database & Search Optimization: Implemented a high-speed vector database utilizing Facebook AI Similarity Search (FAISS). Optimized search complexity from O(N) list traversal to sub-2 millisecond matrix multiplication by employing an IndexFlatIP (Inner Product) index on L2-normalized vectors. Established a strict mathematical confidence threshold of 0.45 to aggressively filter out imposters while maintaining zero false positives."
+  },
+  {
+    "project_name": "VIP Guest Recognition System",
+    "tech_stack": ["FastAPI", "OpenCV", "FAISS", "Firebase"],
+    "section_name": "Zero_Downtime_Hot_Reloading_and_Concurrency",
+    "chunk_content": "System Optimization: Solved a critical RAM vs Disk state desynchronization issue by designing a threaded /rebuild-index endpoint. This allowed zero-downtime dynamic injection of new identities into the FAISS index by fetching new image blobs directly from Firebase Storage. Enforced strict thread safety using self._lock to prevent server race conditions during simultaneous background index rebuilding and real-time client search queries."
+  },
+  {
+    "project_name": "VIP Guest Recognition System",
+    "tech_stack": ["FastAPI", "OpenCV", "FAISS", "Firebase"],
+    "section_name": "Garbage_Collection_and_Database_Integration",
+    "chunk_content": "Resource Management: Engineered a background daemon thread with a 5-minute TTL to aggressively garbage-collect temporary Firebase blobs, completely eliminating local storage memory leaks. Optimized Firestore frontend integration by configuring the AI to return exact document IDs (docId) upon match, enabling the client interface to execute lightning-fast O(1) getDoc() lookups instead of expensive multi-field where() queries."
+  },
+  
+  {
+    "project_name": "Personal Profile & Objectives",
+    "tech_stack": ["AI Engineering", "Backend Architecture", "System Design"],
+    "section_name": "Professional_Summary",
+    "chunk_content": "Profile Overview: I am Snehal, an AI and Backend Engineer deeply passionate about architecting intelligent, high-throughput systems from the ground up. Specializing in generative AI pipelines, robust backend microservices, and scalable system design, I thrive on solving complex mathematical and infrastructural constraints. My core objective is to drive engineering excellence in a high-impact SDE/AI role, contributing to forward-thinking teams that value low-latency performance, highly resilient systems, and rigorous data-driven problem solving."
+  },
+  {
+    "project_name": "Education & Academic Background",
+    "tech_stack": ["Computer Science", "Artificial Intelligence", "Machine Learning"],
+    "section_name": "Academic_Qualifications_and_Transition",
+    "chunk_content": "Academic Background: Completed an M.Tech in Computer Science (Specialization: AI and Machine Learning) at NIT Uttarakhand (Aug 2024-June 2026). Previously completed a B.Tech in Mechanical Engineering from Heritage Institute of Technology, Kolkata (Aug 2018-June 2022). This transition demonstrates exceptional adaptability, a steep learning curve, and a strong mathematical foundation, bridging the gap between core engineering principles and advanced computational algorithms."
+  },
+  {
+    "project_name": "Core Skills & Problem Solving",
+    "tech_stack": ["Python", "FastAPI", "Supabase", "Data Structures", "Algorithms"],
+    "section_name": "Technical_Competencies_and_DSA",
+    "chunk_content": "Core Competencies: Expert in Python ecosystem, specifically FastAPI, Streamlit, and LangChain for AI integration. Deeply experienced in managing PostgreSQL databases using Supabase. Additionally, maintains a rigorous and sustained practice in Data Structures and Algorithms (DSA) for complex problem-solving, consistently optimizing runtime and time/space complexity limits for scalable software engineering."
+  },
+  {
+    "project_name": "Professional Experience: Nexvia Software Technologies",
+    "tech_stack": ["XGBoost", "Random Forest", "Scikit-Learn"],
+    "section_name": "Work_Experience_and_Impact",
+    "chunk_content": "Professional Experience: Served as a Junior Data Scientist at Nexvia Software Technologies, Bengaluru (October 2022 - December 2023). Spearheaded predictive ML initiatives including a Financial Risk & Loan Default Predictor using XGBoost and Random Forest to optimize banking risk evaluation. Additionally engineered an E-Commerce Recommendation & Churn Pipeline utilizing collaborative filtering and Scikit-Learn to significantly improve customer retention metrics for retail accounts."
+  }
+
+]

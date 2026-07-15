@@ -1,0 +1,6 @@
+supabase
+fastapi
+pydantic
+sentence_transformers
+dotenv
+uvicorn
