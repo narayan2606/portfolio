@@ -1,6 +1,7 @@
 supabase
 fastapi
 pydantic
-dotenv
+python-dotenv
 uvicorn
-langchain_google_genai
+langchain-google-genai
+httpx
