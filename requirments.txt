@@ -1,6 +1,6 @@
 supabase
 fastapi
 pydantic
-sentence_transformers
 dotenv
 uvicorn
+langchain_google_genai

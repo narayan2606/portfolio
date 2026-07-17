@@ -2,24 +2,28 @@ import os
 import json
 from dotenv import load_dotenv
 from supabase import create_client, Client
-from sentence_transformers import SentenceTransformer
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 # Load credentials from .env file
 load_dotenv()
 
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY") 
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
-if not SUPABASE_URL or not SUPABASE_KEY:
-    raise ValueError("CRITICAL ERROR: Supabase credentials not found in .env file.")
+# Strict check for all mandatory keys
+if not all([SUPABASE_URL, SUPABASE_KEY, GEMINI_API_KEY]):
+    raise ValueError("CRITICAL ERROR: Supabase or Gemini credentials not found in .env file.")
 
 print("[System] Initializing Supabase client...")
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-print("[System] Loading local embedding model (all-MiniLM-L6-v2)...")
-print("[System] This might take a few seconds on the first run as it downloads the model weights (~80MB).")
-# This model generates exactly 384 dimensions, matching our PostgreSQL vector(384) schema
-encoder = SentenceTransformer('all-MiniLM-L6-v2')
+print("[System] Initializing Google Gemini Cloud Embeddings (models/embedding-001)...")
+# This cloud model generates exactly 768 dimensions. Zero local memory load.
+embeddings = GoogleGenerativeAIEmbeddings(
+    model="models/gemini-embedding-001", 
+    google_api_key=GEMINI_API_KEY
+)
 
 def load_portfolio_data():
     try:
@@ -32,7 +36,7 @@ def inject_data_to_db():
     data = load_portfolio_data()
     total_chunks = len(data)
     print(f"\n[System] Successfully loaded {total_chunks} chunks from JSON.")
-    print("[System] Starting Vectorization and Database Injection Pipeline...\n")
+    print("[System] Starting Cloud Vectorization and Database Injection Pipeline...\n")
 
     for i, item in enumerate(data):
         project_name = item.get("project_name", "General")
@@ -42,8 +46,8 @@ def inject_data_to_db():
         print(f"Processing [{i+1}/{total_chunks}]: {project_name} -> {section_name}")
 
         try:
-            # Step 1: Generate the vector embedding (The mathematical representation of the text)
-            embedding = encoder.encode(chunk_content).tolist()
+            # Step 1: Generate the 768-D vector embedding using Gemini API
+            embedding = embeddings.embed_query(chunk_content)
 
             # Step 2: Prepare the strict payload for Supabase
             payload = {
@@ -60,7 +64,7 @@ def inject_data_to_db():
         except Exception as e:
             print(f"  --> ERROR failed to inject chunk: {e}")
 
-    print("\n[System] All data successfully injected into the vector database!")
+    print("\n[System] All data successfully injected into the vector database using Gemini!")
     print("[System] Phase 1 Complete. You are ready to build the RAG Backend.")
 
 if __name__ == "__main__":
